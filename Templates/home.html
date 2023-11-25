@@ -1,0 +1,46 @@
+<!-- home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+    <h1>Welcome to RSA Encryption System</h1>
+
+    <!-- Key Generation Form -->
+    <form method="POST" action="/generate">
+        <label for="keysize">Choose Key Size:</label>
+        <select name="keysize" required>
+            <option value="1024">RSA-1024</option>
+            <option value="2048">RSA-2048</option>
+        </select>
+        <input type="submit" value="Generate Keys">
+    </form>
+
+    <!-- Explanation Section -->
+    <div class="explanation">
+        <h2>Key Generation, Encryption, and Decryption Process</h2>
+        <p class="white-paragraph">When generating keys, a trusted user has the option to send a message. Here's how the process works:</p>
+    
+        <ol>
+            <li>The RSA key pair (public and private keys) is generated using the selected key size.</li>
+            <li>A trusted user has the choice to submit a message for encryption.</li>
+            <li>The generated public key is then utilized to encrypt the message.</li>
+            <li>The encrypted message is subsequently returned to the user.</li>
+            <li>The user, holding the private key, can decrypt the message using their private key.</li>
+        </ol>
+    </div>
+    
+
+    <!-- Show the "Return Home" button only if the user is not logged in -->
+    {% if 'private_key_d' not in session or 'private_key_n' not in session %}
+        <form action="{{ url_for('return_home') }}" method="POST">
+            <input type="submit" value="Return Home">
+        </form>
+    {% endif %}
+</body>
+</html>
