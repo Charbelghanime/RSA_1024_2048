@@ -9,15 +9,15 @@
 </head>
 
 <body>
-    <h2>{{ operation }} Result</h2>
-    <p>Key Size: {{ keysize }} bits</p>
+    <h2>{{ operation }} The message that you are sending result as encrypted:</h2>
+    <p>The Key Size used in encryption/decryption: {{ keysize }} bits</p>
     
     <div class="limit">
-        <p>The original message that you want to send: {{ message }}</p>
+        <p>The original message that the user want to send: {{ message }}</p>
     </div>
     
     <div class="limit">
-        <p>The encryption result: {{ result }}</p>
+        <p>The encrypted message result: {{ result }}</p>
     </div>
 
     {% if operation == 'Encrypt' %}
