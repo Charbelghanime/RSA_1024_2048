@@ -1,5 +1,5 @@
 Flask
-Crypto.Hash
+cryptography
 random
-flask_session
+flask_session  
 ast
