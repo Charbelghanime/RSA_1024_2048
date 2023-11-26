@@ -87,7 +87,7 @@ input[type="submit"]:hover {
 .limit {
   font-family: 'Times New Roman', Times, serif;
   width: 70%;
-  max-width: 600px;
+  max-width: 700px;
   margin: 30px auto;
   padding: 30px;
   font-size: 16px;
@@ -160,3 +160,68 @@ input[type="submit"]:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 }
+
+/* Add these styles for the falling snow animation */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  animation: fallingSnow 1s linear infinite;
+ }
+ 
+ @keyframes fallingSnow {
+   0% {
+     transform: translateY(-100vh);
+  }
+   100% {
+     transform: translateY(100vh);
+  }
+ }
+/* Add the pulse effect to the Generate Key button */
+.generate-key-button.pulse {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+.flake {
+  position: fixed;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  animation: falling 1s linear infinite;
+ }
+ 
+ .zero, .one {
+  position: fixed;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  animation: falling 1s linear infinite;
+ }
+ 
+ .zero::before {
+  content: "0";
+  position: absolute;
+  top: -20px;
+  left: -5px;
+ }
+ 
+ .one::before {
+  content: "1";
+  position: absolute;
+  top: -20px;
+  left: -5px;
+ }
+ 
+ @keyframes falling {
+   0% {
+     transform: translateY(-100vh);
+  }
+   100% {
+     transform: translateY(100vh);
+  }
