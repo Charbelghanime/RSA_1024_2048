@@ -19,7 +19,7 @@
     </div>
 
     <!-- Display the signature verification result -->
-    {% if is_signature_valid %}
+<!--     {% if is_signature_valid %}
         <div class="limit success">
             <p>Signature verification successful!</p>
         </div>
@@ -27,7 +27,7 @@
         <div class="limit error">
             <p>Signature verification failed!</p>
         </div>
-    {% endif %}
+    {% endif %} -->
 
     <form method="POST" action="/encrypt">
         <input type="hidden" name="keysize" value="{{ keysize }}">
