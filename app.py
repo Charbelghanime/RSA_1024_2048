@@ -263,11 +263,11 @@ def generate():
         public_key, private_key, block_size = generate_key(keysize)
 
         # Generate signature during key generation
-        message_for_signature = "Hello"
-        signature1 = generate_signature(message_for_signature, private_key)
+        # message_for_signature = "Hello"
+        # signature1 = generate_signature(message_for_signature, private_key)
         
-        # Verify the generated signature
-        is_signature_valid = verify_signature(message_for_signature, public_key, signature1)
+        # # Verify the generated signature
+        # is_signature_valid = verify_signature(message_for_signature, public_key, signature1)
 
         # Store public and private keys, block size, key size, and signature in the session
         session['public_key_n'] = str(public_key[0])
