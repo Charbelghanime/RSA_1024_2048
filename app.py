@@ -276,11 +276,9 @@ def generate():
         session['private_key_n'] = str(private_key[0])
         session['block_size'] = block_size
         session['keysize'] = keysize
-        session['signature'] = signature1
 
         return render_template('generate.html', keysize=keysize, public_key=public_key,
-                               private_key_d=str(private_key[1]), private_key_n=str(private_key[0]),
-                               is_signature_valid=is_signature_valid)
+                               private_key_d=str(private_key[1]), private_key_n=str(private_key[0]))
     except Exception as e:
         print(f"Error generating key: {e}")
         return render_template('error.html', message='Error generating key')
