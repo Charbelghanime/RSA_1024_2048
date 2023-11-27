@@ -18,17 +18,6 @@
         <p>{{ public_key[1] }}</p>
     </div>
 
-    <!-- Display the signature verification result -->
-<!--     {% if is_signature_valid %}
-        <div class="limit success">
-            <p>Signature verification successful!</p>
-        </div>
-    {% else %}
-        <div class="limit error">
-            <p>Signature verification failed!</p>
-        </div>
-    {% endif %} -->
-
     <form method="POST" action="/encrypt">
         <input type="hidden" name="keysize" value="{{ keysize }}">
         <input type="hidden" name="public_key_n" value="{{ public_key[0] }}">
